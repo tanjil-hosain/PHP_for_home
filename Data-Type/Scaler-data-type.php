@@ -26,7 +26,10 @@
     var_dump($vtype);
      echo "<br>";
 
-
+     // Float Data Type 
+    $flt_num = 55.55;
+    echo "<br>";
+    var_dump($flt_num);
     ?>
     
 </body>
