@@ -20,6 +20,12 @@
      echo "<br>";
     echo var_dump($num);
 
+    // Boolean Data type
+    $vtype= true;
+    echo "<br>";
+    var_dump($vtype);
+     echo "<br>";
+
 
     ?>
     
