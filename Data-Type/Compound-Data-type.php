@@ -12,6 +12,14 @@
     echo $student;
     echo"<br>";
     var_dump($student);
+     echo"<br>";
+
+    
+    // object <!-- object k class diye and varible 1st letter capital dite hoy-->
+    class Student1{           
+        public $name= "Mosha";
+    } $obj2 = new Student1();
+    var_dump($obj2);
     ?>
 </body>
 </html>
