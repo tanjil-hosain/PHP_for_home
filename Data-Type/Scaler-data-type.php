@@ -12,6 +12,15 @@
     echo $data;
     echo "<br>";
     echo var_dump($data);
+    echo "<br>";
+
+    // Intiger Data-type
+    $num = 50;
+    echo $num;
+     echo "<br>";
+    echo var_dump($num);
+
+
     ?>
     
 </body>
