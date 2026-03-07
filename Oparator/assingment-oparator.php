@@ -14,6 +14,13 @@
     echo $x;
 
     ?>
+    <br>
+    The substraction is <br>
+    <?php
+    $y=50;
+    $y-=20;
+    echo$y;
+    ?>
    </h1>
 </body>
 </html>
