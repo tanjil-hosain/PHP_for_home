@@ -18,4 +18,25 @@ for ($i =0 ; $i<3; $i++ ){
 echo "</ul>"; // dile hoy na dile  o hoy
 }
 
+$numeric = [
+    [
+        [1,2,3,4,5],
+        [10,20,30,40,50],
+        [100,200,300]
+    ],
+    [
+        [6,7,8],
+        [60,70,80],
+        [600,700,800]
+    ],
+    [
+        ["akib","sakib"],
+        ["Rumi", "sumi"],
+        ["dipjol", "Ikbal"]
+    ]
+];
+print_r($numeric);
+
+
+
 ?>
