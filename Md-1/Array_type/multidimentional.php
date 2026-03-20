@@ -36,6 +36,20 @@ $numeric = [
     ]
 ];
 print_r($numeric);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
+for($i = 0; $i<count($numeric); $i++){    // ekhen count bebohar korar fole joto item ache toto item jabee
+    echo "<p><h2> Title $i </h2></p>";
+    for($k = 0; $k<count($numeric[$i]); $k++){
+        echo "<p><b>Sub-Title $k</b></p>";
+        for($v=0; $v<count($numeric[$i][$k]); $v++){
+            echo "<li>". $numeric[$i][$k][$v]. "</li>";
+        }
+    }
+}
+
 
 
 
