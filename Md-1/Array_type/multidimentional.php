@@ -8,4 +8,14 @@ echo $array[2][2]; // 300  multidaimentinal array te 2 ti index number diye ber 
 echo "<br>";
 echo $array[1][0]; // 10
 
+print_r($array);
+
+for ($i =0 ; $i<3; $i++ ){ 
+   echo "<p><b>Title $i</b></p>";
+    for ($k =0 ; $k<3; $k++){ 
+        echo "<li>". $array[$i][$k]. "</li>"."<br>";  // list akare dekhanor jonno
+    }
+echo "</ul>"; // dile hoy na dile  o hoy
+}
+
 ?>
