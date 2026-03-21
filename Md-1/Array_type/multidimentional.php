@@ -91,7 +91,7 @@ echo "<br>";
 echo "<br>";
 echo "<br>";
 
-echo "<ul>"; // প্রধান লিস্ট শুরু
+echo "<ul>"; 
 foreach ($numeric as $level1) {
     echo "<li> Level 1";
     echo "<ul>";
@@ -108,7 +108,7 @@ foreach ($numeric as $level1) {
                     echo "<li> Level 5";
                     echo "<ul>";
                     foreach ($level5 as $finalValue) {
-                        // আসল ডেটা প্রিন্ট
+                      
                         echo "<li><strong>Value: " . $finalValue . "</strong></li>";
                     }
                     echo "</ul>";
