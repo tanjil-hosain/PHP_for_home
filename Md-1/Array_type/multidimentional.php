@@ -19,20 +19,71 @@ echo "</ul>"; // dile hoy na dile  o hoy
 }
 
 $numeric = [
-    [
-        [1,2,3,4,5],
-        [10,20,30,40,50],
-        [100,200,300]
+    [[
+        [
+            [
+                [1,2,3,4,5],
+                [10,20,30,40,50],
+                [100,200,300]
+            ]
+        ]
+    ]
+        
     ],
     [
-        [6,7,8],
-        [60,70,80],
-        [600,700,800]
+        [
+            [
+                [
+                    [6,7,8],
+                    [60,70,80],
+                    [600,700,800]
+                ]
+            ]
+        ]
     ],
     [
-        ["akib","sakib"],
-        ["Rumi", "sumi"],
-        ["dipjol", "Ikbal"]
+        [
+            [
+                [
+                    ["akib","sakib"],
+                    ["Rumi", "sumi"],
+                    ["dipjol", "Ikbal"]
+                ]
+            ]
+        ]
+    ],
+    [
+        [
+            [
+                [
+                    [1,2,3,4,5],
+                    [10,20,30,40,50],
+                    [100,200,300]
+                ]
+            ]
+        ]
+    ],
+    [
+        [
+            [
+                [
+                    [6,7,8],
+                    [60,70,80],
+                    [600,700,800]
+                ]
+            ]
+        ]
+    ],
+    [
+        [
+            [
+                [
+                    ["akib","sakib"],
+                    ["Rumi", "sumi"],
+                    ["dipjol", "Ikbal"]
+                ]
+            ]
+        ]
     ]
 ];
 print_r($numeric);
@@ -40,17 +91,51 @@ echo "<br>";
 echo "<br>";
 echo "<br>";
 
-for($i = 0; $i<count($numeric); $i++){    // ekhen count bebohar korar fole joto item ache toto item jabee
-    echo "<p><h2> Title $i </h2></p>";
-    for($k = 0; $k<count($numeric[$i]); $k++){
-        echo "<p><b>Sub-Title $k</b></p>";
-        for($v=0; $v<count($numeric[$i][$k]); $v++){
-            echo "<li>". $numeric[$i][$k][$v]. "</li>";
+echo "<ul>"; // প্রধান লিস্ট শুরু
+foreach ($numeric as $level1) {
+    echo "<li> Level 1";
+    echo "<ul>";
+    foreach ($level1 as $level2) {
+        echo "<li> Level 2";
+        echo "<ul>";
+        foreach ($level2 as $level3) {
+            echo "<li> Level 3";
+            echo "<ul>";
+            foreach ($level3 as $level4) {
+                echo "<li> Level 4";
+                echo "<ul>";
+                foreach ($level4 as $level5) {
+                    echo "<li> Level 5";
+                    echo "<ul>";
+                    foreach ($level5 as $finalValue) {
+                        // আসল ডেটা প্রিন্ট
+                        echo "<li><strong>Value: " . $finalValue . "</strong></li>";
+                    }
+                    echo "</ul>";
+                }
+                echo "</ul>";
+            }
+            echo "</ul>";
         }
+        echo "</ul>";
     }
+    echo "</ul>";
 }
+echo "</ul>";
 
+// for($i = 0; $i<count($numeric); $i++){    // ekhen count bebohar korar fole joto item ache toto item jabee
+//     echo "<p><h2> Title $i </h2></p>";
+//     for($k = 0; $k<count($numeric[$i]); $k++){
+//         echo "<p><b>Sub-Title $k</b></p>";
+//         for($v=0; $v<count($numeric[$i][$k]); $v++){
+//              echo "<p><b>Sub-Title-1 $v</b></p>";
+//              for($m=0; $m<count($numeric[$i][$k][$v]); $m++){
+//                 echo "<p><b>Sub-Title-2 $m</b></p>";
 
-
+//              }
+//         }
+//     }
+// }
+// echo "<li>". $numeric[$i][$k][$v]. "</li>";
 
 ?>
