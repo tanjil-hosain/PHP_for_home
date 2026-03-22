@@ -62,7 +62,6 @@ if (isset($_POST["btnsubmit"])) {
     </style>
 </head>
 <body>
-   <h1 class="marq"> <marquee behavior="" direction="">Student Managment System</marquee></h1>
 
 <h2>Student Form</h2>
 
