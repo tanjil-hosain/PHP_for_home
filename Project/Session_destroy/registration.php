@@ -26,7 +26,7 @@
     <div class="form-container">
       <h3 class="text-center mb-4">Register</h3>
 
-      <form>
+      <form method="post">
         <div class="mb-3">
           <label class="form-label">Full Name</label>
           <input type="text" class="form-control" placeholder="Enter your name" name="name" required>
@@ -53,3 +53,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+<?php
+if(isset($_POST['register'])){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $data = $name . "|". $email . "|" . $password . PHP_EOL;
+    $file = fopen("user.txt","a");
+    fwrite($file,$data);
+    fclose($file);
+    echo"Registration Successfully";
+}
+?>
