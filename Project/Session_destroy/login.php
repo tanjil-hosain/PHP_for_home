@@ -24,13 +24,9 @@
 <body>
       <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="form-container">
-      <h3 class="text-center mb-4">Register</h3>
+      <h3 class="text-center mb-4">User Login</h3>
 
       <form method="post">
-        <div class="mb-3">
-          <label class="form-label">Full Name</label>
-          <input type="text" class="form-control" placeholder="Enter your name" name="name" required>
-        </div>
 
         <div class="mb-3">
           <label class="form-label">Email address</label>
@@ -42,27 +38,14 @@
           <input type="password" class="form-control" placeholder="Enter password" name="password" required>
         </div>
 
-        <button type="submit" class="btn btn-primary w-100" name="register">Register</button>
+        <button type="submit" class="btn btn-primary w-100" name="loginbtn">Login</button>
       </form>
 
       <p class="text-center mt-3 mb-0">
-        Already have an account? <a href="login.php">Login</a>
+       You don't have an account? <a href="registration.php">Register</a>
       </p>
     </div>
   </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-<?php
-if(isset($_POST['register'])){
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    $data = $name . "|". $email . "|" . $password . PHP_EOL;
-    $file = fopen("user.txt","a");
-    fwrite($file,$data);
-    fclose($file);
-    echo"Registration Successfully";
-}
-?>
