@@ -1,3 +1,26 @@
+<?php session_start();
+
+if(isset($_POST['loginbtn'])){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $store_file = file("user.txt");
+
+    foreach($store_file as $line){
+        list($email, $password)= explode("|", $line);
+
+        if(trim($_email)==$email && trim($_password)==$password){
+            $_SESSION["email"] = $email;
+            header("location:dashboard.php");
+        } else {
+            echo"User name or password incorrect!";
+        }
+    
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
