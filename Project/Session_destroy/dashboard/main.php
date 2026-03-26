@@ -27,3 +27,9 @@ if(isset($_POST['submit'])){
     </form>
 </body>
 </html>
+
+<?php
+if(isset($_POST['submit'])){
+    echo"<img src= '$save.$filename' alt='image' width='400px'>";
+}
+?>
