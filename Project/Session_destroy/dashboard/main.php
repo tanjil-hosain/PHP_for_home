@@ -1,3 +1,10 @@
+<?php 
+ session_start();
+
+ if(!isset($_SESSION["email"])){
+	 header("location:login.php");
+  }
+?>
 <?php
 if(isset($_POST['submit'])){
     $filename= $_FILES['file']['name'];
