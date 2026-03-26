@@ -24,7 +24,6 @@
     $vtype= true;
     echo "<br>";
     var_dump($vtype);
-     echo "<br>";
 
      // Float Data Type 
     $flt_num = 55.55;
