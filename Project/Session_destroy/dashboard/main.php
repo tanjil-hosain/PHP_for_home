@@ -3,6 +3,7 @@
 
  if(!isset($_SESSION["email"])){
 	 header("location:login.php");
+     exit();
   }
 ?>
 <?php
@@ -13,7 +14,8 @@ if(isset($_POST['submit'])){
     $save = "img/";
 
     if($typ == "jpg" || $typ == "png"){
-        move_uploaded_file("$tmp", "$save.$filename");
+        $destination = $save . $filename;
+        move_uploaded_file("$tmp", "$destination");
     } else{
         echo " Only jpg and png uploaded";
     }
@@ -32,11 +34,21 @@ if(isset($_POST['submit'])){
         <input type="submit" name="submit" value="Submit">
 
     </form>
+    <hr>
+    <h2>All Uploaded Images</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+        <?php
+        // Folder er sob image scan kore dekhano
+        $images = glob($save . "*.{jpg,jpeg,png}", GLOB_BRACE);
+        
+        foreach($images as $image) {
+            echo "<div>
+                    <img src='$image' width='200px' style='border:1px solid #ccc; border-radius:10px;'>
+                    <p>".basename($image)."</p>
+                  </div>";
+        }
+        ?>
+    </div>
 </body>
 </html>
 
-<?php
-if(isset($_POST['submit'])){
-    echo"<img src= '$save.$filename' alt='image' width='400px'>";
-}
-?>
