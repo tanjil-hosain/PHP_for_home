@@ -7,11 +7,12 @@
   }
 ?>
 <?php
+ $save = "img/";
 if(isset($_POST['submit'])){
     $filename= $_FILES['file']['name'];
     $tmp = $_FILES['file']['tmp_name'];
     $typ = pathinfo($filename, PATHINFO_EXTENSION);
-    $save = "img/";
+   
 
     if($typ == "jpg" || $typ == "png"){
         $destination = $save . $filename;
