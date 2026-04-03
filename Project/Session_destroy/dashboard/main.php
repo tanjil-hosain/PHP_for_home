@@ -29,6 +29,10 @@ if(isset($_POST['submit'])){
     <title>Dash-board</title>
 </head>
 <body>
+    <?php
+    require_once("heder.php");
+    ?>
+
     <form action="" method="post" enctype="multipart/form-data">
         <input type="file" name="file"> 
         <input type="submit" name="submit" value="Submit">
