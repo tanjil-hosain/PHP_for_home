@@ -29,9 +29,9 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="../registration.php">registration</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="./page/page-1.php">page-1</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="./page/page-2.php">Something else here</a></li>
           </ul>
         </li>
          <li class="nav-item">

@@ -11,12 +11,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>page-2</title>
 </head>
 <body>
-    <?php
-    require_once("../heder.php");
-    ?>
-   <h1> This is my first page</h1>
+    <?php 
+    require_once("../heder.php")
+     ?>
+    this is 2nd page
 </body>
 </html>
