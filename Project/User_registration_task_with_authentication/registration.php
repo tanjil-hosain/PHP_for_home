@@ -98,6 +98,7 @@ if(isset($_POST['register'])){
         fwrite($file,$data);
         fclose($file);
         echo "Registration Succesfully";
+        header("location:login.php");
 
 
     }
