@@ -51,15 +51,15 @@
         </div>
                 <div class="mb-3">
           <label class="form-label">Address</label>
-          <input type="password" class="form-control" placeholder=" Address" name="address" required>
+          <input type="text" class="form-control" placeholder=" Address" name="address" required>
         </div>
                 <div class="mb-3">
           <label class="form-label">Contact Number</label>
-          <input type="password" class="form-control" placeholder=" Contact Number" name="contact" required>
+          <input type="text" class="form-control" placeholder=" Contact Number" name="contact" required>
         </div>
                 <div class="mb-3">
           <label class="form-label">User Name</label>
-          <input type="password" class="form-control" placeholder=" User name" name="user_name" required>
+          <input type="text" class="form-control" placeholder=" User name" name="user_name" required>
         </div>
 
         <button type="submit" class="btn btn-primary w-100" name="register">Register</button>
@@ -86,7 +86,21 @@ if(isset($_POST['register'])){
 
     $email_pattern = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
 
-    $pass_pattern = "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,} $/";
+    $pass_pattern = "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/";
+
+       if(!preg_match($email_pattern,$email)){
+        echo "Your email is invalid!!";
+    } elseif(!preg_match($pass_pattern, $password)){
+        echo "Your Password must be captial or 8 length";
+    } else {
+        $file= fopen("user.txt", "a");
+        $data = $id . "|". $name . "|". $email."|". $password. "|". $address. "|". $contact."|".$user_name . PHP_EOL;
+        fwrite($file,$data);
+        fclose($file);
+        echo "Registration Succesfully";
+
+
+    }
 
  
 }
