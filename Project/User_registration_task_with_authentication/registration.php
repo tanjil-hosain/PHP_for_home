@@ -74,3 +74,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+<?php
+if(isset($_POST['register'])){
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password= $_POST['password'];
+    $address = $_POST['address'];
+    $contact = $_POST['contact'];
+    $user_name = $_POST['user_name'];
+
+    $email_pattern = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
+
+    $pass_pattern = "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,} $/";
+
+ 
+}
+?>
