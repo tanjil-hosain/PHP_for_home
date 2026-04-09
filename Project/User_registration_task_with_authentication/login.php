@@ -1,4 +1,4 @@
-<?php 
+<?php session_start();
 
 if(isset($_POST['loginbtn'])){
     $user_name = $_POST['user_name'];
@@ -10,8 +10,8 @@ if(isset($_POST['loginbtn'])){
         list($user_name, $password)= explode("|", $line);
 
         if(trim($user_name)==$user_name && trim($password)==$password){
-           
-            header("location:dashboard/main.php");
+            $_SESSION["email"] = $user_name;
+            header("location:admin_panel.php");
         } else {
             echo"User name or password incorrect!";
         }
