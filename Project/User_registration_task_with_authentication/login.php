@@ -1,3 +1,25 @@
+<?php 
+
+if(isset($_POST['loginbtn'])){
+    $user_name = $_POST['user_name'];
+    $password = $_POST['password'];
+
+    $store_file = file("user.txt");
+
+    foreach($store_file as $line){
+        list($user_name, $password)= explode("|", $line);
+
+        if(trim($user_name)==$user_name && trim($password)==$password){
+           
+            header("location:dashboard/main.php");
+        } else {
+            echo"User name or password incorrect!";
+        }
+    
+    }
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
