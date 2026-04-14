@@ -18,9 +18,9 @@ if(isset($_POST['add_birds'])){
     $msg = "<div class='alert alert-danger'>Maxmum 2mb file Upload Please!!</div>";
 
   }else{
-    $store_bird_img = "birds/" . time() . "_". $image_name;
+    $store_bird_img = "birds/" . "_". $image_name;
     if(move_uploaded_file($tmp_name, $store_bird_img)){
-      $id= time();
+
       $data = "$id|$name|$store_bird_img". PHP_EOL;
       file_put_contents("birds_info.txt", $data, FILE_APPEND);
       $msg = "<div class='alert alert-success'>Item Added Successfully!</div>";
@@ -59,7 +59,7 @@ if(isset($_POST['add_birds'])){
     <div class="form-container">
       <h3 class="text-center mb-4">ADD BIRDS</h3>
 
-      <form method="post">
+      <form method="post" enctype="multipart/form-data">
 
         <div class="mb-3">
           <label class="form-label">Id</label>
