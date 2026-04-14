@@ -17,6 +17,16 @@ if(isset($_POST['add_birds'])){
   } elseif($image_size > $max_size){
     $msg = "<div class='alert alert-danger'>Maxmum 2mb file Upload Please!!</div>";
 
+  }else{
+    $store_bird_img = "birds/" . time() . "_". $image_name;
+    if(move_uploaded_file($tmp_name, $store_bird_img)){
+      $id= time();
+      $data = "$id|$name|$store_bird_img". PHP_EOL;
+      file_put_contents("birds_info.txt", $data, FILE_APPEND);
+      $msg = "<div class='alert alert-success'>Item Added Successfully!</div>";
+    } else{
+      $msg = "<div class='alert alert-danger'>Server error during upload!</div>";
+    }
   }
 }
 
