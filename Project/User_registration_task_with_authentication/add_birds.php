@@ -1,3 +1,27 @@
+<?php
+if(isset($_POST['add_birds'])){
+  $id = $_POST['id'];
+  $name= $_POST['name'];
+
+  $image_name= $_FILES['img_file']['name'];
+  $image_size = $_FILES['img_file']['size'];
+  $tmp_name = $_FILES['img_file']['tmp_name'];
+
+  $type = pathinfo($image_name, PATHINFO_EXTENSION);
+  $allowed_type = array('jpg','jpeg', 'png');
+
+  $max_size = 2*1024*1024;
+
+  if(!in_array($type, $allowed_type)){
+    $msg = "<div class='alert alert-danger'>Only jpg, jpeg and png suportted!!</div>";
+  } elseif($image_size > $max_size){
+    $msg = "<div class='alert alert-danger'>Maxmum 2mb file Upload Please!!</div>";
+
+  }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +47,7 @@
 <body>
       <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="form-container">
-      <h3 class="text-center mb-4">ADD BIRDS/h3>
+      <h3 class="text-center mb-4">ADD BIRDS</h3>
 
       <form method="post">
 
@@ -36,7 +60,9 @@
           <label class="form-label">Name</label>
           <input type="text" class="form-control" placeholder="Name" name="name" required>
         </div>
-        <input type="file" name="img_file" required> 
+         <div class="mb-3">
+        <input type="file" class="form-control"  name="img_file" required> 
+        </div>
 
         <button type="submit" class="btn btn-primary w-100" name="add_birds">Add birds</button>
       </form>
