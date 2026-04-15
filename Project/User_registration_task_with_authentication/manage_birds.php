@@ -21,28 +21,40 @@
         </tr>
     </thead>
     <tbody>
-        <?php
-        if (file_exists("birds_info.txt")) {
-            $lines = file("birds_info.txt", FILE_IGNORE_NEW_LINES);
-            foreach ($lines as $line) {
-                $data = explode("|", $line);
-                $id = $data[0];
-                $name = $data[1];
-                $img = $data[2];
+        <tbody>
+    <?php
+    if (file_exists("birds_info.txt")) {
+        // FILE_SKIP_EMPTY_LINES use korle blank line gula PHP nijei bad diye dey
+        $lines = file("birds_info.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        
+        foreach ($lines as $line) {
+            $line = trim($line); // Ashpashe extra space remove kora
+            if (empty($line)) continue; // Jodi line purapuri khali hoy skip korbe
 
-                echo "<tr>";
-                echo "<td>$id</td>";
-                echo "<td><img src='$img' width='50' class='rounded'></td>";
-                echo "<td>$name</td>";
-                echo "<td>
-                        <a href='edit_birds.php?id=$id' class='btn btn-sm btn-info'>Edit</a>
-                        <a href='delete_bird.php?id=$id' class='btn btn-sm btn-danger' onclick='return confirm(\"Are you sure?\")'>Delete</a>
-                      </td>";
-                echo "</tr>";
-            }
+            $data = explode("|", $line);
+
+            // Check koro thikmoto ID, Name, r Image ache kina
+            if (count($data) < 3) continue; 
+
+            $id   = $data[0];
+            $name = $data[1];
+            $img  = $data[2];
+
+            echo "<tr>";
+            echo "<td>$id</td>";
+            echo "<td><img src='$img' width='50' class='rounded'></td>";
+            echo "<td>$name</td>";
+            echo "<td>
+                    <a href='edit_birds.php?id=$id' class='btn btn-sm btn-info text-white'>Edit</a>
+                    <a href='delete_birds.php?id=$id' class='btn btn-sm btn-danger' onclick='return confirm(\"Are you sure?\")'>Delete</a>
+                  </td>";
+            echo "</tr>";
         }
-        ?>
-    </tbody>
+    } else {
+        echo "<tr><td colspan='4'>No data found!</td></tr>";
+    }
+    ?>
+</tbody>
 </table>
 
 </body>
