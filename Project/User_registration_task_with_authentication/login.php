@@ -11,7 +11,7 @@ if(isset($_POST['loginbtn'])){
 
         if(trim($user_name)==$user_name && trim($password)==$password){
             $_SESSION["email"] = $user_name;
-            header("location:add_birds.php");
+            header("location:main.php");
         } else {
             echo"User name or password incorrect!";
         }

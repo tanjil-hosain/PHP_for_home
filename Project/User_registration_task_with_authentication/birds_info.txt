@@ -1,3 +1,2 @@
-1776173795|Koyel|birds/1776173795_bird_logopng.png
-1776174341|doyel|birds/1776174341_bird_logopng.png
+1001|Koyel|birds/_bird_logopng.png
 1001|Koyel|birds/_bird_logopng.png
