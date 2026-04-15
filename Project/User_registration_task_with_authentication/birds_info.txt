@@ -1,2 +1,2 @@
-1001|Koyel|birds/_bird_logopng.png
-1001|Koyel|birds/_bird_logopng.png
+101|Moyna|birds/_bird_logopng.png
+101|Moyna|birds/_bird_logopng.png

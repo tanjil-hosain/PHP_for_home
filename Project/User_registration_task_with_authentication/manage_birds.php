@@ -35,7 +35,7 @@
                 echo "<td><img src='$img' width='50' class='rounded'></td>";
                 echo "<td>$name</td>";
                 echo "<td>
-                        <a href='edit_bird.php?id=$id' class='btn btn-sm btn-info'>Edit</a>
+                        <a href='edit_birds.php?id=$id' class='btn btn-sm btn-info'>Edit</a>
                         <a href='delete_bird.php?id=$id' class='btn btn-sm btn-danger' onclick='return confirm(\"Are you sure?\")'>Delete</a>
                       </td>";
                 echo "</tr>";
