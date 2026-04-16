@@ -55,6 +55,9 @@ if(isset($_POST['add_birds'])){
   </style>
 </head>
 <body>
+  <?php
+require_once("header.php");
+?>
       <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="form-container">
       <h3 class="text-center mb-4">ADD BIRDS</h3>

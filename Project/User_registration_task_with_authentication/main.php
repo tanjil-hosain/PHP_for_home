@@ -23,11 +23,12 @@
         }
     </style>
 </head>
-<?php
-require_once("header.php");
-?>
+
 
 <body class="bg-light">
+    <?php
+require_once("header.php");
+?>
 
     <div class="container table-container">
         <h2 class="text-center mb-4">Available Birds</h2>
