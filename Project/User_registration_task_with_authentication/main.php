@@ -81,6 +81,63 @@ require_once("header.php");
             </tbody>
         </table>
     </div>
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="searchModalLabel">Search Result Found</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <?php
+        if (isset($_GET['search']) && !empty(trim($_GET['search']))) {
+            $search_term = trim($_GET['search']);
+            $file_path = "birds_info.txt";
+            $found = false;
+
+            if (file_exists($file_path)) {
+                $lines = file($file_path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+                foreach ($lines as $line) {
+                    $data = explode("|", $line);
+                    if (count($data) < 3) continue;
+
+                    // Match logic: ID ba Name-e search term thakle show korbe
+                    if (stripos($data[0], $search_term) !== false || stripos($data[1], $search_term) !== false) {
+                        echo "<div class='card mb-3 shadow-sm p-3'>";
+                        echo "<img src='{$data[2]}' class='card-img-top rounded mx-auto' style='max-width: 150px;'>";
+                        echo "<div class='card-body'>";
+                        echo "<h6 class='text-muted'>ID: {$data[0]}</h6>";
+                        echo "<h4 class='card-title text-primary'>{$data[1]}</h4>";
+                        echo "</div>";
+                        echo "</div>";
+                        $found = true;
+                    }
+                }
+            }
+            
+            if (!$found) {
+                echo "<div class='alert alert-warning'>Mama, '$search_term' namer kichu khuje pai nai!</div>";
+            }
+        }
+        ?>
+      </div>
+      <div class="modal-footer">
+        <a href="main.php" class="btn btn-secondary">Close & Clear Search</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        // Jodi URL-e 'search' thake, tahole modal open hobe
+        if (urlParams.has('search') && urlParams.get('search') !== '') {
+            var myModal = new bootstrap.Modal(document.getElementById('searchModal'));
+            myModal.show();
+        }
+    }
+</script>
 
 </body>
 
