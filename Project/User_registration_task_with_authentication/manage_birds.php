@@ -9,6 +9,9 @@
         .table-container { margin-top: 50px; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
     </style>
 </head>
+<?php
+require_once("header.php");
+?>
 <body class="bg-light">
 
 <table class="table table-bordered align-middle text-center">

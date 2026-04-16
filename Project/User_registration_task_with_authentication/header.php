@@ -26,7 +26,7 @@
                         <a class="nav-link" href="add_birds.php">Add Bird</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="manage_birds.php">Manage Item</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Logout</a>
