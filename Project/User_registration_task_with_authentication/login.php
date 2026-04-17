@@ -10,7 +10,7 @@ if(isset($_POST['loginbtn'])){
         list($user_name, $password)= explode("|", $line);
 
         if(trim($user_name)==$user_name && trim($password)==$password){
-            $_SESSION["email"] = $user_name;
+            $_SESSION["user_name"] = $user_name;
             header("location:main.php");
         } else {
             echo"User name or password incorrect!";

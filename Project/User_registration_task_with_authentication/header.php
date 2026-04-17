@@ -29,7 +29,7 @@
                         <a class="nav-link" href="manage_birds.php">Manage Item</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="logout.php">Logout</a>
                     </li>
                 </ul>
                 <form class="d-flex" action="main.php" method="GET">
