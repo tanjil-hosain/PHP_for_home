@@ -1,3 +1,11 @@
+<?php 
+ session_start();
+
+ if(!isset($_SESSION["user_name"])){
+	 header("location:login.php");
+     exit();
+  }
+?>
 <?php
 if(isset($_POST['add_birds'])){
   $id = $_POST['id'];
